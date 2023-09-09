@@ -112,7 +112,7 @@ class SpaceCraft {
                     Top: 'N',
                 },
                 Down: {
-                    FaceDirection: 'D',
+                    FaceDirection: 'U',
                     Top: 'S',
                 }
             },
@@ -459,13 +459,13 @@ class SpaceCraft {
         }
     }
 
-    constructor(name) {
+    constructor(name, x = 0, y = 0, z = 0, FaceDirection = 'N', Top = 'U') {
         this.name = name;
-        this.x = 0;
-        this.y = 0;
-        this.z = 0;
-        this.FaceDirection = 'N';
-        this.Top = 'U';
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.FaceDirection = FaceDirection;
+        this.Top = Top;
     }
 
     moveForward() {

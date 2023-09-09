@@ -1,6 +1,6 @@
 const ResolveCommand = (command, object) => {
     for (let i = 0; i < command.length; i++) {
-        switch (command[i]) {
+        switch (command[i].toLowerCase()) {
             case 'f':
                 object.moveForward();
                 break;
