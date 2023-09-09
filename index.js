@@ -4,7 +4,7 @@ const ResolveCommand = require("./ResolveCommand")
 const Chandrayaan3 = new SpaceCraft("Chandrayaan3");
 
 // Example usage:
-ResolveCommand(['f', 'f', 'b', 'f', 'f'], Chandrayaan3);
+ResolveCommand(['f', 'r', 'u', 'b', 'l'], Chandrayaan3);
 
 // Display the final position and direction
 console.log(`Final Position: (${Chandrayaan3.x}, ${Chandrayaan3.y}, ${Chandrayaan3.z})`);

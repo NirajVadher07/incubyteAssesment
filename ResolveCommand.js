@@ -16,7 +16,15 @@ const ResolveCommand = (command, object) => {
             case 'r':
                 object.turnRight();
                 break;
-            
+
+            case 'u':
+                object.turnUp();
+                break;
+
+            case 'd':
+                object.turnDown();
+                break;
+
             default:
                 console.log("Invalid Command");
                 return;
