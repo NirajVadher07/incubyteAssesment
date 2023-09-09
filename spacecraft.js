@@ -4,12 +4,12 @@ class SpaceCraft {
         this.x = 0;
         this.y = 0;
         this.z = 0;
-        this.FaceDirection = 'N'; 
+        this.FaceDirection = 'N';
         this.Top = 'U';
     }
 
     moveForward() {
-        switch (this.FaceDirection) {            
+        switch (this.FaceDirection) {
             case 'N':
                 this.y += 1;
                 break;
@@ -53,7 +53,45 @@ class SpaceCraft {
                 break;
         }
     }
- 
+
+    turnLeft() {
+        switch (this.FaceDirection) {
+            case 'N':
+                this.FaceDirection = 'W';
+                break;
+            case 'S':
+                this.FaceDirection = 'E';
+                break;
+            case 'E':
+                this.FaceDirection = 'N';
+                break;
+            case 'W':
+                this.FaceDirection = 'S';
+                break;
+            default:
+                break;
+        }
+    }
+
+    turnRight() {
+        switch (this.FaceDirection) {
+            case 'N':
+                this.FaceDirection = 'E';
+                break;
+            case 'S':
+                this.FaceDirection = 'W';
+                break;
+            case 'E':
+                this.FaceDirection = 'S';
+                break;
+            case 'W':
+                this.FaceDirection = 'N';
+                break;
+            default:
+                break;
+        }
+    }
+    
 }
 
 module.exports = SpaceCraft;

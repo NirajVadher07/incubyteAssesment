@@ -8,6 +8,14 @@ const ResolveCommand = (command, object) => {
             case 'b':
                 object.moveBackward();
                 break;
+
+            case 'l':
+                object.turnLeft();
+                break;
+
+            case 'r':
+                object.turnRight();
+                break;
             
             default:
                 console.log("Invalid Command");
