@@ -1,27 +1,29 @@
+const { COMMAND } = require("./constants")
+
 const ResolveCommand = (command, object) => {
     for (let i = 0; i < command.length; i++) {
-        switch (command[i].toLowerCase()) {
-            case 'f':
+        switch (command[i].toUpperCase()) {
+            case COMMAND.FORWARD:
                 object.moveForward();
                 break;
 
-            case 'b':
+            case COMMAND.BACKWARD:
                 object.moveBackward();
                 break;
 
-            case 'l':
+            case COMMAND.LEFT:
                 object.turnLeft();
                 break;
 
-            case 'r':
+            case COMMAND.RIGHT:
                 object.turnRight();
                 break;
 
-            case 'u':
+            case COMMAND.UP:
                 object.turnUp();
                 break;
 
-            case 'd':
+            case COMMAND.DOWN:
                 object.turnDown();
                 break;
 

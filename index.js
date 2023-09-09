@@ -7,6 +7,4 @@ const Chandrayaan3 = new SpaceCraft("Chandrayaan3");
 ResolveCommand(['f', 'r', 'u', 'b', 'l'], Chandrayaan3);
 
 // Display the final position and direction
-console.log(`Final Position: (${Chandrayaan3.x}, ${Chandrayaan3.y}, ${Chandrayaan3.z})`);
-console.log(`Final Direction: ${Chandrayaan3.FaceDirection}`);
-console.log(`Final Top: ${Chandrayaan3.Top}`);
+Chandrayaan3.display();
