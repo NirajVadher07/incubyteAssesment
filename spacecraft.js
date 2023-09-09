@@ -1,4 +1,5 @@
 class SpaceCraft {
+
     constructor(name) {
         this.name = name;
         this.x = 0;
@@ -57,16 +58,76 @@ class SpaceCraft {
     turnLeft() {
         switch (this.FaceDirection) {
             case 'N':
-                this.FaceDirection = 'W';
+                switch (this.Top) {
+                    case 'W':
+                        this.FaceDirection = 'D';
+                        break;
+                    case 'E':
+                        this.FaceDirection = 'U';
+                        break;
+                    case 'U':
+                        this.FaceDirection = 'W';
+                        break;
+                    case 'D':
+                        this.FaceDirection = 'E';
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 'S':
-                this.FaceDirection = 'E';
+                switch (this.Top) {
+                    case 'W':
+                        this.FaceDirection = 'U';
+                        break;
+                    case 'E':
+                        this.FaceDirection = 'D';
+                        break;
+                    case 'U':
+                        this.FaceDirection = 'E';
+                        break;
+                    case 'D':
+                        this.FaceDirection = 'W';
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 'E':
-                this.FaceDirection = 'N';
+                switch (this.Top) {
+                    case 'N':
+                        this.FaceDirection = 'D';
+                        break;
+                    case 'S':
+                        this.FaceDirection = 'U';
+                        break;
+                    case 'U':
+                        this.FaceDirection = 'N';
+                        break;
+                    case 'D':
+                        this.FaceDirection = 'S';
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 'W':
-                this.FaceDirection = 'S';
+                switch (this.Top) {
+                    case 'N':
+                        this.FaceDirection = 'U';
+                        break;
+                    case 'S':
+                        this.FaceDirection = 'D';
+                        break;
+                    case 'U':
+                        this.FaceDirection = 'S';
+                        break;
+                    case 'D':
+                        this.FaceDirection = 'N';
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 'U':
                 switch (this.Top) {
@@ -112,15 +173,77 @@ class SpaceCraft {
     turnRight() {
         switch (this.FaceDirection) {
             case 'N':
-                this.FaceDirection = 'E';
+                switch (this.Top) {
+                    case 'W':
+                        this.FaceDirection = 'U';
+                        break;
+                    case 'E':
+                        this.FaceDirection = 'D';
+                        break;
+                    case 'U':
+                        this.FaceDirection = 'E';
+                        break;
+                    case 'D':
+                        this.FaceDirection = 'W';
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 'S':
-                this.FaceDirection = 'W';
+                switch (this.Top) {
+                    case 'W':
+                        this.FaceDirection = 'D';
+                        break;
+                    case 'E':
+                        this.FaceDirection = 'U';
+                        break;
+                    case 'U':
+                        this.FaceDirection = 'W';
+                        break;
+                    case 'D':
+                        this.FaceDirection = 'E';
+                        break;
+                    default:
+                        break;
+                }
                 break;
+
             case 'E':
-                this.FaceDirection = 'S';
+                switch (this.Top) {
+                    case 'N':
+                        this.FaceDirection = 'U';
+                        break;
+                    case 'S':
+                        this.FaceDirection = 'D';
+                        break;
+                    case 'U':
+                        this.FaceDirection = 'S';
+                        break;
+                    case 'D':
+                        this.FaceDirection = 'N';
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 'W':
+                switch (this.Top) {
+                    case 'N':
+                        this.FaceDirection = 'D';
+                        break;
+                    case 'S':
+                        this.FaceDirection = 'U';
+                        break;
+                    case 'U':
+                        this.FaceDirection = 'N';
+                        break;
+                    case 'D':
+                        this.FaceDirection = 'S';
+                        break;
+                    default:
+                        break;
+                }
                 this.FaceDirection = 'N';
                 break;
             case 'U':
@@ -185,6 +308,7 @@ class SpaceCraft {
             this.FaceDirection = 'U';
         }
     }
+
 
     turnDown() {
         if (this.FaceDirection !== 'D' && this.FaceDirection !== 'U') {
