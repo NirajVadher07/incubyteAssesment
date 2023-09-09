@@ -26,6 +26,46 @@ describe('Chandrayaan3', () => {
     expect(Chandrayaan3.FaceDirection).to.equal('N');
   })
 
+  it("should move left", () => {
+    ResolveCommand(['l'], Chandrayaan3);
+
+    expect(Chandrayaan3.x).to.equal(0);
+    expect(Chandrayaan3.y).to.equal(0);
+    expect(Chandrayaan3.z).to.equal(0);
+    expect(Chandrayaan3.FaceDirection).to.equal('W');
+    expect(Chandrayaan3.Top).to.equal('U');
+  })
+
+  it("should move right", () => {
+    ResolveCommand(['r'], Chandrayaan3);
+
+    expect(Chandrayaan3.x).to.equal(0);
+    expect(Chandrayaan3.y).to.equal(0);
+    expect(Chandrayaan3.z).to.equal(0);
+    expect(Chandrayaan3.FaceDirection).to.equal('E');
+    expect(Chandrayaan3.Top).to.equal('U');
+  })
+
+  it("turn up", () => {
+    ResolveCommand(['u'], Chandrayaan3);
+
+    expect(Chandrayaan3.x).to.equal(0);
+    expect(Chandrayaan3.y).to.equal(0);
+    expect(Chandrayaan3.z).to.equal(0);
+    expect(Chandrayaan3.FaceDirection).to.equal('U');
+    expect(Chandrayaan3.Top).to.equal('S');
+  })
+
+  it("turn down", () => {
+    ResolveCommand(['d'], Chandrayaan3);
+
+    expect(Chandrayaan3.x).to.equal(0);
+    expect(Chandrayaan3.y).to.equal(0);
+    expect(Chandrayaan3.z).to.equal(0);
+    expect(Chandrayaan3.FaceDirection).to.equal('D');
+    expect(Chandrayaan3.Top).to.equal('N');
+  })
+
 
   it("should move backward, should move forward, should move Forward, should move Forward , should move backward", () => {
     ResolveCommand(['b', 'f', 'f', 'f', 'b'], Chandrayaan3)
@@ -64,6 +104,7 @@ describe('Chandrayaan3', () => {
     expect(Chandrayaan3.FaceDirection).to.equal('S');
   })
 
+
   it("should move forward, turn right, turn up, should move backward, turn left", () => {
     ResolveCommand(['f', 'r', 'u', 'b', 'l'], Chandrayaan3);
 
@@ -82,5 +123,7 @@ describe('Chandrayaan3', () => {
     expect(Chandrayaan3.z).to.equal(-1);
     expect(Chandrayaan3.FaceDirection).to.equal('S');
     expect(Chandrayaan3.Top).to.equal('W');
-  })  
+  })
+
+
 });
