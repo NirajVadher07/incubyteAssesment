@@ -2,6 +2,7 @@
  * Represents a spacecraft and provides methods to control its movement.
 */
 const { DataDictionary, DIRECTION } = require('./constants');
+
 class SpaceCraft {
 
     static DataDictionary = DataDictionary
@@ -55,10 +56,13 @@ class SpaceCraft {
 
     moveForward() {
         this.move(1);
+        if (this.x > 5 || this.y > 5 || this.z > 5) {
+            throw new Error("Boundary exceeded");
+        }
     }
 
     moveBackward() {
-        this.move(-1);
+        this.move(-1);        
     }
 
     turnLeft() {
