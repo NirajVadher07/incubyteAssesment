@@ -161,4 +161,12 @@ describe('Chandrayaan3', () => {
     }
   });
 
+  it("Boundary exceeded backward ", () => {
+    try {
+      ResolveCommand(['b', 'b', 'b', 'b', 'b', 'b'], Chandrayaan3);
+      assert.fail('Expected an error Boundary exceeded error');
+    } catch (error) {
+      expect(error.message).to.equal("Boundary exceeded");
+    }
+  });
 });
