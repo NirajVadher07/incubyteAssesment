@@ -1,11 +1,10 @@
-/**
+/*
  * Represents a spacecraft and provides methods to control its movement.
 */
 const { DataDictionary, DIRECTION } = require('./constants');
 class SpaceCraft {
 
     static DataDictionary = DataDictionary
-
     /**
      * Construct a new SpaceCraft object.
      * @param {string} name - The name of the spacecraft.

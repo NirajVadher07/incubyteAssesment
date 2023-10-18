@@ -58,3 +58,5 @@ The solution presented here is the development of a `SpaceCraft` class using the
 - **_Unit Testing with Mocha_**: Mocha is a popular testing framework for JavaScript that is used to run the unit tests. This ensures that the class functions correctly and consistently. There are namely six hooks used in the testing by this framework to set up or load up preconditions used in the testing (it(), describe(), beforeEach(), afterEach(), before(), after()). Chai provides a set of assertion styles and functions that make it easier to write expressive and readable assertions in your test code.
 
 - **_Separation of Constants_**: To improve code organization and modularity, constants like _DataDictionary_, _DIRECTION_, and _COMMAND_ are defined in a separate `constants.js` file. This separation allows for easy management and reusability of constants.
+
+![Alt text](image.png)
