@@ -1,4 +1,4 @@
-const { expect } = require('chai');
+const { expect, assert, should } = require('chai');
 const SpaceCraft = require('../spacecraft');
 const ResolveCommand = require("../ResolveCommand");
 
@@ -114,7 +114,7 @@ describe('Chandrayaan3', () => {
   })
 
   it("turn down, turn down, turn down, turn left, turn left, turn up, turn up, turn up", () => {
-    ResolveCommand(['d','d','d','l','l','u','u','u'],Chandrayaan3);
+    ResolveCommand(['d', 'd', 'd', 'l', 'l', 'u', 'u', 'u'], Chandrayaan3);
 
     expect(Chandrayaan3.FaceDirection).to.equal('N');
     expect(Chandrayaan3.Top).to.equal('D');
@@ -141,15 +141,24 @@ describe('Chandrayaan3', () => {
     expect(Chandrayaan3.Top).to.equal('W');
   })
 
-  it("Combination test case", ()=>{
-    ResolveCommand(['f','r', 'l', 'l', 'f', 'u', 'f', 'f', 'u', 'd', 'd'], Chandrayaan3
+  it("Combination test case", () => {
+    ResolveCommand(['f', 'r', 'l', 'l', 'f', 'u', 'f', 'f', 'u', 'd', 'd'], Chandrayaan3
     );
-    
+
     expect(Chandrayaan3.x).to.equal(-1);
     expect(Chandrayaan3.y).to.equal(1);
     expect(Chandrayaan3.z).to.equal(2);
     expect(Chandrayaan3.FaceDirection).to.equal('W');
     expect(Chandrayaan3.Top).to.equal('U');
   })
+
+  it("Boundary exceeded", () => {
+    try {
+      ResolveCommand(['f', 'f', 'f', 'f', 'f', 'f'], Chandrayaan3);
+      assert.fail('Expected an error Boundary exceeded error');
+    } catch (error) {
+      expect(error.message).to.equal("Boundary exceeded");
+    }
+  });
 
 });
