@@ -59,4 +59,3 @@ The solution presented here is the development of a `SpaceCraft` class using the
 
 - **_Separation of Constants_**: To improve code organization and modularity, constants like _DataDictionary_, _DIRECTION_, and _COMMAND_ are defined in a separate `constants.js` file. This separation allows for easy management and reusability of constants.
 
-![Alt text](image.png)
