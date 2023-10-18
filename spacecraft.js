@@ -8,87 +8,87 @@ class SpaceCraft {
     static DataDictionary = DataDictionary
     /**
      * Construct a new SpaceCraft object.
-     * @param {string} name - The name of the spacecraft.
-     * @param {number} x - The initial X-coordinate.
-     * @param {number} y - The initial Y-coordinate.
-     * @param {number} z - The initial Z-coordinate.
+     * @param {string} Name - The Name of the spacecraft.
+     * @param {number} X - The initial X-coordinate.
+     * @param {number} Y - The initial Y-coordinate.
+     * @param {number} Z - The initial Z-coordinate.
      * @param {string} FaceDirection - The initial facing direction (NORTH, SOUTH, EAST, WEST, UP, DOWN).
      * @param {string} Top - The initial top direction (UP, DOWN, NORTH, SOUTH, EAST, WEST).
      */
-    constructor(name, x = 0, y = 0, z = 0, FaceDirection = DIRECTION.NORTH, Top = DIRECTION.UP) {
-        this.name = name;
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    constructor(Name, X = 0, Y = 0, Z = 0, FaceDirection = DIRECTION.NORTH, Top = DIRECTION.UP) {
+        this.Name = Name;
+        this.X = X;
+        this.Y = Y;
+        this.Z = Z;
         this.FaceDirection = FaceDirection;
         this.Top = Top;
     }
 
-    display() {
-        console.log(`Name: ${this.name}`);
-        console.log(`Position (x, y, z): ${this.x}, ${this.y}, ${this.z}`);
+    Display() {
+        console.log(`Name: ${this.Name}`);
+        console.log(`Position (X, Y, Z): ${this.X}, ${this.Y}, ${this.Z}`);
         console.log(`FaceDirection: ${this.FaceDirection}`);
         console.log(`Top: ${this.Top}`);
     }
 
-    move(direction) {
+    Move(Direction) {
         switch (this.FaceDirection) {
             case DIRECTION.NORTH:
-                this.y += direction;
+                this.Y += Direction;
                 break;
             case DIRECTION.SOUTH:
-                this.y -= direction;
+                this.Y -= Direction;
                 break;
             case DIRECTION.EAST:
-                this.x += direction;
+                this.X += Direction;
                 break;
             case DIRECTION.WEST:
-                this.x -= direction;
+                this.X -= Direction;
                 break;
             case DIRECTION.UP:
-                this.z += direction;
+                this.Z += Direction;
                 break;
             case DIRECTION.DOWN:
-                this.z -= direction;
+                this.Z -= Direction;
                 break;
         }
     }
 
-    moveForward() {
-        this.move(1);
-        if (this.x > 5 || this.y > 5 || this.z > 5) {
+    MoveForward() {
+        this.Move(1);
+        if (this.X > 5 || this.Y > 5 || this.Z > 5) {
             throw new Error("Boundary exceeded");
         }
     }
 
-    moveBackward() {
-        this.move(-1);
-        if (this.x < -5 || this.y < -5 || this.z < -5) {
+    MoveBackward() {
+        this.Move(-1);
+        if (this.X < -5 || this.Y < -5 || this.Z < -5) {
             throw new Error("Boundary exceeded");
         }
     }
 
-    turnLeft() {
-        const leftMovement = SpaceCraft.DataDictionary[this.FaceDirection]?.[this.Top]?.left;
-        if (leftMovement) {
-            const { FaceDirection, Top } = leftMovement;
+    TurnLeft() {
+        const LeftMovement = SpaceCraft.DataDictionary[this.FaceDirection]?.[this.Top]?.left;
+        if (LeftMovement) {
+            const { FaceDirection, Top } = LeftMovement;
             this.FaceDirection = FaceDirection;
             this.Top = Top;
         }
 
     }
 
-    turnRight() {
-        const rightMovement = SpaceCraft.DataDictionary[this.FaceDirection]?.[this.Top]?.right;
-        if (rightMovement) {
-            const { FaceDirection, Top } = rightMovement;
+    TurnRight() {
+        const RightMovement = SpaceCraft.DataDictionary[this.FaceDirection]?.[this.Top]?.right;
+        if (RightMovement) {
+            const { FaceDirection, Top } = RightMovement;
             this.FaceDirection = FaceDirection;
             this.Top = Top;
         }
 
     }
 
-    turnUp() {
+    TurnUp() {
         const UpMovement = SpaceCraft.DataDictionary[this.FaceDirection]?.[this.Top]?.Up;
         if (UpMovement) {
             const { FaceDirection, Top } = UpMovement;
@@ -98,7 +98,7 @@ class SpaceCraft {
 
     }
 
-    turnDown() {
+    TurnDown() {
         const DownMovement = SpaceCraft.DataDictionary[this.FaceDirection]?.[this.Top]?.Down;
         if (DownMovement) {
             const { FaceDirection, Top } = DownMovement;

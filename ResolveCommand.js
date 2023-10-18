@@ -4,27 +4,27 @@ const ResolveCommand = (command, object) => {
     for (let i = 0; i < command.length; i++) {
         switch (command[i].toUpperCase()) {
             case COMMAND.FORWARD:
-                object.moveForward();
+                object.MoveForward();
                 break;
 
             case COMMAND.BACKWARD:
-                object.moveBackward();
+                object.MoveBackward();
                 break;
 
             case COMMAND.LEFT:
-                object.turnLeft();
+                object.TurnLeft();
                 break;
 
             case COMMAND.RIGHT:
-                object.turnRight();
+                object.TurnRight();
                 break;
 
             case COMMAND.UP:
-                object.turnUp();
+                object.TurnUp();
                 break;
 
             case COMMAND.DOWN:
-                object.turnDown();
+                object.TurnDown();
                 break;
 
             default:
