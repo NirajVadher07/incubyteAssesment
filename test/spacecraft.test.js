@@ -152,7 +152,7 @@ describe('Chandrayaan3', () => {
     expect(Chandrayaan3.Top).to.equal('U');
   })
 
-  it("Boundary exceeded", () => {
+  it("Boundary exceeded forward direction", () => {
     try {
       ResolveCommand(['f', 'f', 'f', 'f', 'f', 'f'], Chandrayaan3);
       assert.fail('Expected an error Boundary exceeded error');
@@ -161,7 +161,7 @@ describe('Chandrayaan3', () => {
     }
   });
 
-  it("Boundary exceeded backward ", () => {
+  it("Boundary exceeded backward direction", () => {
     try {
       ResolveCommand(['b', 'b', 'b', 'b', 'b', 'b'], Chandrayaan3);
       assert.fail('Expected an error Boundary exceeded error');

@@ -62,7 +62,10 @@ class SpaceCraft {
     }
 
     moveBackward() {
-        this.move(-1);        
+        this.move(-1);
+        if (this.x < -5 || this.y < -5 || this.z < -5) {
+            throw new Error("Boundary exceeded");
+        }
     }
 
     turnLeft() {
